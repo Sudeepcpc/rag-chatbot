@@ -1,5 +1,8 @@
 # 📄 DocChat — RAG Chatbot with Gemini
 
+## 🚀 Live Demo
+👉 [Click here to try the app](https://rag-chat-sudeep.streamlit.app/)
+
 A production-style **Retrieval-Augmented Generation (RAG)** pipeline that lets you chat with any PDF document. Built with LangChain, ChromaDB, sentence-transformers, and Gemini 1.5 Flash.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
@@ -31,7 +34,7 @@ Chunking with overlap (LangChain RecursiveCharacterTextSplitter)
     ↓
 Embedding (sentence-transformers: all-MiniLM-L6-v2)
     ↓
-Vector Store (ChromaDB in-memory)
+Vector Store (NumPy cosine similarity, in-memory)
     ↓
 User Question → Embed → Cosine similarity search → Top 5 chunks
     ↓
@@ -115,7 +118,7 @@ GEMINI_API_KEY = "AIza_your_key_here"
 | PDF Parsing | PyMuPDF (fitz) |
 | Chunking | LangChain RecursiveCharacterTextSplitter |
 | Embeddings | sentence-transformers (all-MiniLM-L6-v2) |
-| Vector DB | ChromaDB |
+| Vector DB | NumPy cosine similarity (in-memory) |
 | LLM | Gemini 1.5 Flash (Google AI) |
 
 ---

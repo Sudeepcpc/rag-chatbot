@@ -80,9 +80,9 @@ with st.sidebar:
                 chunks = chunk_pages(pages)
 
             with st.spinner("Embedding & indexing into ChromaDB..."):
-                collection = store_chunks(chunks)
+                indexed_chunks = store_chunks(chunks)
 
-            st.session_state["collection"] = collection
+            st.session_state["collection"] = indexed_chunks
             st.session_state["doc_name"] = uploaded_file.name
             st.session_state["num_pages"] = len(pages)
             st.session_state["num_chunks"] = len(chunks)

@@ -54,13 +54,14 @@ st.caption("RAG pipeline · Gemini 2.5 Flash · ChromaDB · sentence-transformer
 with st.sidebar:
     st.header("⚙️ Setup")
 
-    api_key = st.text_input(
-    "Gemini API Key",
-    type="password",
-    value=os.environ.get("GEMINI_API_KEY", ""),
-    placeholder="AIza...",
-    help="Free key from aistudio.google.com"
-)
+    api_key = os.environ.get("GEMINI_API_KEY", "")
+    if not api_key:
+        api_key = st.text_input(
+            "Gemini API Key",
+            type="password",
+            placeholder="AIza...",
+            help="Free key from aistudio.google.com"
+        )
 
     st.divider()
     st.header("📁 Upload PDF")
